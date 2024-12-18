@@ -28,12 +28,14 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $product = new Products;
-        $product->name = $request->name;
-        $product->landed_cost = $request->landed_cost;
-        $product->sell_margin = $request->sell_margin;
-        $product->selling_price = $request->selling_price;
-        $product->save();
+        // dd($request->all());
+        Products::create($request->all());
+        // $product = new Products;
+        // $product->name = $request->name;
+        // $product->landed_cost = $request->landed_cost;
+        // $product->sell_margin = $request->sell_margin;
+        // $product->selling_price = $request->selling_price;
+        // $product->save();
         return redirect('/product');
     }
 

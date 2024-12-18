@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Product</title>
-</head>
-<body>
-
+<x-layout>
     <h1>Edit Product</h1>
     <form action="{{ route('product.update', $product->id) }}" method="POST">
         @csrf
@@ -17,6 +9,4 @@
         <input type="number" name="selling_price" value="{{ $product->selling_price }}">
         <input type="submit" value="Update Product">
     </form>
-
-</body>
-</html>
+</x-layout>
